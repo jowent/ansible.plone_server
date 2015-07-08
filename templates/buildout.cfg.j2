@@ -20,6 +20,9 @@ find-links =
     http://download.zope.org/distribution/
     http://effbot.org/downloads
     http://dist.plone.org/release/{{ plone_version }}
+# This is where the released eggs are found
+    file://{{ plone_target_path }}/homelaid-eggs/
+
 
 extensions =
     buildout.sanitycheck
