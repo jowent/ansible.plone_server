@@ -12,6 +12,7 @@ download-cache=../buildout-cache/downloads
 newest = false
 prefer-final = true
 show-picked-versions = true
+allow-picked-versions = false
 versions = versions
 
 find-links =
@@ -22,6 +23,8 @@ find-links =
     http://dist.plone.org/release/{{ plone_version }}
 # This is where the released eggs are found
     file://{{ plone_target_path }}/homelaid-eggs/
+# MAKE SURE we Pin to versions already tried & tested in Staging
+    knownGoodSet.cfg
 
 extensions =
     buildout.sanitycheck
