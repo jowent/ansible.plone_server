@@ -5,6 +5,8 @@
 
 extends =
     http://dist.plone.org/release/{{ plone_version }}/versions.cfg
+# MAKE SURE we Pin to versions already tried & tested in Staging
+    knownGoodSet.cfg
 
 eggs-directory=../buildout-cache/eggs
 download-cache=../buildout-cache/downloads
@@ -23,8 +25,6 @@ find-links =
     http://dist.plone.org/release/{{ plone_version }}
 # This is where the released eggs are found
     file://{{ plone_target_path }}/homelaid-eggs/
-# MAKE SURE we Pin to versions already tried & tested in Staging
-    knownGoodSet.cfg
 
 extensions =
     buildout.sanitycheck
