@@ -1,3 +1,8 @@
+1.1.1-dj 2015-08-10
+
+- Add parameter 'plone_buildout_pins_git_repo' which is used to a specify git
+  repo containing a 'knownGoodSet.cfg' version pin file used to extend buildout.
+
 1.1.1 2015-07-28
 
 - buildout git repo checkout was not working. Fixed.

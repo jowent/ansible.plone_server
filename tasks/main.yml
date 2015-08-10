@@ -162,6 +162,22 @@
     owner=plone_buildout
     group=plone_group
 
+
+- name: Checkout pins file from project directory
+  when: plone_buildout_pins_git_repo and ((plone_buildout_git_repo is not defined) or not (plone_buildout_git_repo))
+  local_action:
+    command git archive
+        --remote={{ plone_buildout_pins_git_repo }}
+        HEAD
+        knownGoodSet.cfg
+        -o /tmp/knownGoodSet.cfg
+
+- name: Copy pins file to remote server
+  when: plone_buildout_pins_git_repo and ((plone_buildout_git_repo is not defined) or not (plone_buildout_git_repo))
+  copy:
+    src=/tmp/knownGoodSet.cfg
+    dest={{ plone_instance_home }}
+
 - name: Instance directory via git
   when: (plone_buildout_git_repo is defined) and (plone_buildout_git_repo)
   git:

@@ -89,6 +89,15 @@ Your install's backup directory will be {{ plone_backup_path }}/{{ plone_instanc
 >
 > If you use your own buildout, all Plone settings except `plone_client_count`, `plone_client_base_port`, and `plone_client_max_memory` are ignored.
 
+### plone_buildout_pins_git_repo
+
+    plone_buildout_pins_git_repo: /home/john/sourcebases/project.git
+
+The location of a repository containing a `knownGoodSet.cfg` file which will be used
+to extend the built in buildout with version pins for products used in your project.
+These pins could be chosen manually or recorded from your staging environment.
+
+
 ### plone_major_version
 
     plone_major_version: 4.3
