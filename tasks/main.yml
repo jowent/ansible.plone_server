@@ -292,8 +292,8 @@
   with_sequence: count={{ plone_client_count }}
 
 - name: Supervisor zeoclients tasks are restarted
-  when: plone_use_supervisor and plone_autorun_buildout
-        and (instance_status.changed or buildout_pins_status.changed or
+  when: plone_use_supervisor and plone_autorun_buildout and
+        (instance_status.changed or buildout_pins_status.changed or
             buildout_status.stat.exists == False)
   supervisorctl:
     name=zeoclient{{ item }}
