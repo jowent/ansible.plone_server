@@ -165,7 +165,6 @@ http-address = 127.0.0.1:{{ "%s" % (plone_client_base_port|int + plone_client_co
 
 [backup]
 recipe = collective.recipe.backup
-recipe = collective.recipe.backup
 location = ${buildout:backups-dir}/backups
 blobbackuplocation = ${buildout:backups-dir}/blobstoragebackups
 snapshotlocation = ${buildout:backups-dir}/snapshotbackups
@@ -180,6 +179,8 @@ datafs = ${buildout:var-dir}/filestorage/Data.fs
 blob-storage = ${buildout:var-dir}/blobstorage
 keep = {{ plone_keep_backups }}
 keep_blob_days = {{ plone_keep_blob_days  }}
+# Make backups readable by remote user
+rsync_options = --no-perms
 
 
 [setpermissions]
