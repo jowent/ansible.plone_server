@@ -180,7 +180,7 @@ blob-storage = ${buildout:var-dir}/blobstorage
 keep = {{ plone_keep_backups }}
 keep_blob_days = {{ plone_keep_blob_days  }}
 # Make backups readable by remote user
-rsync_options = --no-perms --chmod=g=r
+rsync_options = --no-perms --chmod=g=rx
 
 
 [setpermissions]
