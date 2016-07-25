@@ -218,7 +218,7 @@
 
 # Plone < 5.0; use bootstrap
 - name: Bootstrap buildout
-  command: ../python{{ plone_python_version }}/bin/python{{ plone_python_version }} bootstrap.py --setuptools-version=8.0.4
+  command: ../python{{ plone_python_version }}/bin/python{{ plone_python_version }} bootstrap.py --version=1.7.1 --setuptools-version=0.6c11
     creates={{ plone_instance_home }}/bin/buildout
     chdir={{ plone_instance_home }}
   when: instance_config.plone_version < '5.0' and buildout_status.stat.exists == False
